@@ -52,7 +52,11 @@ The screenshots below are captured from the running application at a 1366 × 900
 
 ![Homepage](docs/screenshots/homepage.png)
 
-![Showtime](docs/screenshots/showtime.png)
+<img width="1407" height="897" alt="image" src="https://github.com/user-attachments/assets/bb25c927-001e-445e-9fe6-186ceb646778" />
+<img width="1817" height="907" alt="image" src="https://github.com/user-attachments/assets/4c6e3008-5122-4b71-9a62-a996b95ecc30" />
+<img width="1841" height="893" alt="image" src="https://github.com/user-attachments/assets/c688fa54-8197-4374-9a24-f696fb3fc0bc" />
+
+
 
 ## Project status
 
