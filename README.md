@@ -50,7 +50,8 @@ A responsive performing-arts website for discovering shows, venues, cultural pro
 
 The screenshots below are captured from the running application at a 1366 × 900 desktop viewport:
 
-![Homepage](docs/screenshots/homepage.png)
+<img width="1892" height="900" alt="image" src="https://github.com/user-attachments/assets/8086db85-f9a8-44e8-ab96-ecc025dc3386" />
+
 
 <img width="1407" height="897" alt="image" src="https://github.com/user-attachments/assets/bb25c927-001e-445e-9fe6-186ceb646778" />
 <img width="1817" height="907" alt="image" src="https://github.com/user-attachments/assets/4c6e3008-5122-4b71-9a62-a996b95ecc30" />
