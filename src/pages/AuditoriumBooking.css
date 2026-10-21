@@ -1,0 +1,413 @@
+.booking-layout {
+  min-height: 100vh;
+  color: #393939;
+  background: #f3f5f7;
+}
+
+.booking-page {
+  min-height: auto;
+  padding: 38px clamp(20px, 6.5vw, 96px) 83px;
+  background: #f3f5f7;
+}
+
+.booking-page-header,
+.booking-layout .booking-content {
+  max-width: 1240px;
+}
+
+.booking-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 88px;
+}
+
+.booking-header-actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.booking-capacity {
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+
+}
+
+.booking-capacity strong {
+  color: #444;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.booking-capacity span {
+  color: #858585;
+  font-size: 9px;
+}
+
+.booking-show-title {
+  margin: 0 0 12px;
+  color: #8d111b;
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.booking-show-venue {
+  margin: 0 0 3px;
+  color: #545454;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.booking-page-subtitle {
+  color: #545454;
+  font-size: 12px;
+}
+
+.booking-play-name {
+  color: #991b1b;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+
+.booking-back {
+  align-self: flex-end;
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.booking-layout .booking-content {
+  grid-template-columns: minmax(0, 2.5fr) minmax(185px, 1fr);
+  align-items: stretch;
+  gap: clamp(16px, 2.1vw, 30px);
+}
+
+.auditorium-panel {
+  display: grid;
+  min-width: 0;
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 10px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.booking-layout .auditorium-scroll {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  place-items: center;
+}
+
+.booking-layout .auditorium-map {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.booking-layout .auditorium-seat--selected .auditorium-seat-hit-area {
+  fill: #aa8c59;
+  fill-opacity: 0.78;
+  stroke: #8f7448;
+}
+
+.booking-layout .auditorium-seat--booked .auditorium-seat-hit-area,
+.booking-layout .auditorium-seat--unavailable .auditorium-seat-hit-area {
+  fill: #929292;
+  fill-opacity: 0.8;
+  stroke: #777;
+}
+
+.booking-summary {
+  position: static;
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 16px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.booking-summary-section {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b89457;
+}
+
+.booking-summary h2.booking-summary-label {
+  margin: 0 0 9px;
+  color: #8d111b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking-summary .seat-legend {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  color: #858585;
+  font-size: 13px;
+}
+
+.booking-summary .seat-legend-swatch {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 2px;
+}
+
+.booking-summary .seat-legend-swatch--available {
+  background: #fff;
+  border: 1px solid #c9c9c9;
+}
+
+.booking-summary .seat-legend-swatch--selected {
+  background: #aa8c59;
+}
+
+.booking-summary .seat-legend-swatch--booked,
+.booking-summary .seat-legend-swatch--unavailable {
+  background: #929292;
+}
+
+.booking-summary-row,
+.booking-summary-details > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #858585;
+  font-size: 13px;
+}
+
+.booking-summary-row strong,
+.booking-summary-details dd {
+  color: #8d111b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.booking-summary-section:nth-child(2) .booking-summary-row {
+  padding: 3px 0;
+}
+
+.booking-summary-section:nth-child(2) .booking-summary-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.booking-selected-section {
+  min-height: 82px;
+}
+
+.booking-selected-seats {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 74px;
+  overflow: auto;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-selected-seats li {
+  padding: 3px 6px;
+  color: #8d111b;
+  border: 1px dashed #c78b8f;
+  font-size: 12px;
+}
+
+.booking-empty-seats {
+  margin: 0;
+  color: #858585;
+  font-size: 13px;
+}
+
+.booking-summary-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  margin: auto 0 0;
+}
+
+.booking-summary h2.booking-summary-label {
+  margin: 0 0 7px;
+}
+
+.booking-summary-lines {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  min-height: 24px;
+  max-height: 125px;
+  gap: 9px;
+  margin: 0;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.booking-summary-lines::-webkit-scrollbar {
+  display: none;
+}
+
+.booking-summary-lines > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #858585;
+  font-size: 13px;
+}
+
+.booking-summary-lines .booking-summary-total {
+  padding-top: 8px;
+  border-top: 1px solid #b89457;
+  font-size: 14px !important;
+}
+
+.booking-summary-total dt,
+.booking-summary-total dd {
+  color: #8d111b;
+  font-weight: 700;
+}
+
+.booking-continue {
+  min-height: 38px;
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.booking-notice {
+  margin: -5px 0 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.booking-layout .site-footer {
+  color: #454545;
+  background: #fff;
+  border-top: 1px solid #e5e8ea;
+}
+
+.booking-layout .footer-main {
+  max-width: 1800px;
+  padding: 32px clamp(24px, 5.5vw, 110px);
+  grid-template-columns: 1.1fr 1.9fr 1.15fr 0.95fr;
+  align-items: start;
+  gap: 22px;
+}
+
+.booking-layout .footer-brand img {
+  width: clamp(130px, 11vw, 205px);
+  mix-blend-mode: multiply;
+}
+
+.booking-layout .footer-links {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px 28px;
+}
+
+.booking-layout .footer-links a,
+.booking-layout .footer-social a,
+.booking-layout .footer-bottom a {
+  color: inherit;
+}
+
+.booking-layout .footer-bottom {
+  border-color: #e1e4e7;
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .booking-layout .footer-main {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 620px) {
+  .booking-page {
+    padding: 22px 16px 28px;
+  }
+
+  .booking-page-header {
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .booking-header-actions {
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .booking-layout .booking-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auditorium-panel {
+    aspect-ratio: auto;
+    height: min(68vh, 520px);
+    min-height: 410px;
+  }
+
+  .booking-layout .auditorium-map {
+    max-width: none;
+  }
+
+  .booking-summary {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .booking-summary-details,
+  .booking-continue,
+  .booking-notice {
+    grid-column: 1 / -1;
+  }
+
+  .booking-summary-details {
+    margin-top: 2px;
+  }
+
+  .booking-layout .footer-main {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-page-header {
+    gap: 8px;
+  }
+
+  .booking-back {
+    gap: 4px;
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  .booking-summary {
+    padding: 18px;
+  }
+
+  .booking-layout .footer-main {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}

@@ -1,0 +1,35 @@
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  font-family: "Oxygen", sans-serif;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: #a67c52;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb .separator {
+  color: #999;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: #222;
+  font-weight: 600;
+}

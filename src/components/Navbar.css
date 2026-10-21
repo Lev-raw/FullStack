@@ -1,0 +1,370 @@
+/* ===== Navbar.css ===== */
+/* Every rule below is copied straight from your original style.css,
+   keeping just the selectors Navbar.jsx actually uses. */
+
+.main-nav {
+    width: 100%;
+    height: 98px;
+
+    background: #ffffff;
+
+    display: grid;
+    
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    
+    align-items: center;
+
+    padding: 0 150px;
+
+    position: relative;
+    z-index: 20;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+
+    gap: 32px;
+
+    justify-content: flex-start;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 28px;
+    justify-content: flex-end;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav li>a {
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    color: #555555;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    transition: color 0.2s ease;
+}
+
+.main-nav li>a:hover {
+    color: #8d111b;
+}
+
+.auth-signout {
+    padding: 0;
+    border: 0;
+    color: #555555;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.auth-signout:hover {
+    color: #8d111b;
+}
+
+.chevron {
+    position: relative;
+    display: inline-block;
+
+    margin-left: 7px;
+
+    color: #8d111b;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    padding: 0 48px;
+}
+
+.logo-wrap img {
+    display: block;
+
+    height: 82px;
+    width: auto;
+
+    object-fit: contain;
+}
+
+.main-nav .btn-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 177px;
+    height: 54px;
+
+    background: #8d111b;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    transition: background 0.2s ease;
+}
+
+.main-nav .btn-book:hover {
+    background: #741019;
+}
+
+.search-btn,
+.profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+}
+
+.icon-btn svg {
+    display: block;
+
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: #8d111b;
+    stroke-width: 1.7;
+
+    transition: stroke 0.2s ease;
+}
+
+.icon-btn:hover svg {
+    stroke: #741019;
+}
+
+/* ----- Legacy dropdown ----- */
+
+.dropdown {
+    display: none;
+
+    position: absolute;
+    top: 28px;
+    left: -18px;
+
+    width: 215px;
+
+    background: #ffffff;
+
+    list-style: none;
+    margin: 0;
+    padding: 14px 0;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    z-index: 2000;
+}
+
+.dropdown li {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.dropdown li a {
+    display: block;
+
+    color: #444444;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.dropdown li:hover {
+    background: #f7f7f7;
+}
+
+.dropdown-parent:hover .dropdown {
+    display: block;
+}
+
+/* ----- Hamburger toggle (checkbox-driven) ----- */
+
+.menu-toggle-input {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    gap: 6px;
+
+    border: 0;
+    background: transparent;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: #8d111b;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle-input:checked ~ .menu-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle-input:checked ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle-input:checked ~ .menu-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----- Responsive menu panel ----- */
+
+.mobile-menu {
+    display: none;
+}
+
+/* ===== Responsive: compact navigation ===== */
+
+@media (max-width: 1250px) {
+
+    .main-nav {
+        height: 88px;
+        grid-template-columns: 42px minmax(0, 1fr);
+        padding: 0 32px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-left,
+    .nav-right {
+        display: none;
+    }
+
+    .logo-wrap img {
+        height: 72px;
+    }
+
+    .mobile-menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: #ffffff;
+
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+
+        padding: 8px 0 16px;
+
+        z-index: 30;
+    }
+
+    .mobile-menu ul {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-menu li {
+        list-style: none;
+    }
+
+    .menu-toggle-input:checked ~ .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu > ul > li > a {
+        display: block;
+        padding: 14px 16px;
+
+        color: #444444;
+
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .mobile-menu .auth-signout {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .mobile-menu > ul > li > a:hover {
+        color: #8d111b;
+        background: #f7f7f7;
+    }
+
+    .logo-wrap {
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-nav {
+        height: 82px;
+        padding: 0 16px;
+    }
+
+    .mobile-menu ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mobile-menu > ul > li > a {
+        padding: 13px 10px;
+        font-size: 12px;
+    }
+}

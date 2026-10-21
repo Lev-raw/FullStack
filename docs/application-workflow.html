@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How the INT ABCPA Application Works</title>
+  <style>
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #182632;
+      background: #eef2f5;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef2f5;
+      font-size: 11pt;
+      line-height: 1.4;
+    }
+
+    .page {
+      position: relative;
+      width: 297mm;
+      height: 210mm;
+      padding: 13mm 15mm 12mm;
+      margin: 0 auto 10mm;
+      overflow: hidden;
+      background: #fff;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 2mm;
+      color: #9d5428;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: #172d3b;
+      font-size: 25pt;
+      line-height: 1.12;
+    }
+
+    .subtitle {
+      margin: 2mm 0 7mm;
+      color: #536674;
+      font-size: 11pt;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 11mm 1.18fr 11mm 1.18fr 11mm 1.2fr;
+      align-items: center;
+      min-height: 74mm;
+    }
+
+    .stage {
+      min-height: 57mm;
+      padding: 5mm;
+      border: 1px solid #d5e0e6;
+      border-top: 4px solid #27798a;
+      border-radius: 3mm;
+      background: #f7fafb;
+    }
+
+    .stage.person {
+      border-top-color: #c47b3d;
+      background: #fffaf4;
+    }
+
+    .stage.api {
+      border-top-color: #3a6a91;
+      background: #f4f8fc;
+    }
+
+    .stage.storage {
+      border-top-color: #44876f;
+      background: #f3faf6;
+    }
+
+    .stage h2 {
+      margin: 0 0 2mm;
+      color: #203a4a;
+      font-size: 13pt;
+    }
+
+    .stage p {
+      margin: 1.5mm 0;
+      color: #465a67;
+      font-size: 9.3pt;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 1mm 1mm 0 0;
+      padding: 1mm 2mm;
+      border-radius: 5mm;
+      background: #e4eef1;
+      color: #315a67;
+      font-size: 8pt;
+      font-weight: 600;
+    }
+
+    .arrow {
+      color: #ad6534;
+      font-size: 22pt;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .return {
+      margin: -2mm 0 5mm;
+      color: #526b79;
+      font-size: 9pt;
+      text-align: center;
+    }
+
+    .lower-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr 1fr;
+      gap: 4mm;
+      margin-top: 3mm;
+    }
+
+    .info {
+      min-height: 30mm;
+      padding: 4mm 4.5mm;
+      border: 1px solid #dfe6ea;
+      border-radius: 2.5mm;
+      background: #fbfcfd;
+    }
+
+    .info h3 {
+      margin: 0 0 1.5mm;
+      color: #203a4a;
+      font-size: 10pt;
+    }
+
+    .info p {
+      margin: 0;
+      color: #536674;
+      font-size: 8.6pt;
+    }
+
+    .info.warn {
+      border-color: #ead6c2;
+      background: #fffaf4;
+    }
+
+    .footer {
+      position: absolute;
+      right: 15mm;
+      bottom: 7mm;
+      left: 15mm;
+      display: flex;
+      justify-content: space-between;
+      color: #70808a;
+      font-size: 8pt;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 10mm 1fr 10mm 1fr 10mm 1fr 10mm 1fr;
+      align-items: stretch;
+      margin: 5mm 0 4mm;
+    }
+
+    .step {
+      min-height: 37mm;
+      padding: 4mm;
+      border: 1px solid #d7e2e8;
+      border-radius: 3mm;
+      background: #f7fafb;
+    }
+
+    .step .num {
+      display: grid;
+      width: 7mm;
+      height: 7mm;
+      margin-bottom: 2mm;
+      place-items: center;
+      border-radius: 50%;
+      background: #27798a;
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+    }
+
+    .step h2 {
+      margin: 0 0 1.5mm;
+      color: #203a4a;
+      font-size: 10.5pt;
+    }
+
+    .step p {
+      margin: 0;
+      color: #536674;
+      font-size: 8.6pt;
+    }
+
+    .cms-details {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 5mm;
+      margin-top: 4mm;
+    }
+
+    .upload-flow,
+    .database-flow {
+      padding: 4mm 5mm;
+      border: 1px solid #dce5e9;
+      border-radius: 3mm;
+      background: #fbfcfd;
+    }
+
+    .upload-flow h2,
+    .database-flow h2 {
+      margin: 0 0 2mm;
+      color: #203a4a;
+      font-size: 12pt;
+    }
+
+    .line {
+      margin: 1.4mm 0;
+      color: #435965;
+      font-size: 9pt;
+    }
+
+    .line strong {
+      color: #233e4d;
+    }
+
+    .mini-arrow {
+      padding: 0 1mm;
+      color: #ad6534;
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 4mm;
+      padding: 3mm 4mm;
+      border-left: 3px solid #c47b3d;
+      background: #fff8f0;
+      color: #584b3e;
+      font-size: 8.7pt;
+    }
+
+    @media screen {
+      .page {
+        box-shadow: 0 4px 20px #172d3b1a;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="page" aria-labelledby="overview-title">
+      <p class="eyebrow">A beginner-friendly application map</p>
+      <h1 id="overview-title">How the INT ABCPA application works</h1>
+      <p class="subtitle">Follow a request from the person using the site through the app and API to the place that stores its data.</p>
+
+      <div class="flow" aria-label="Visitor to React app to Express API to database and file storage">
+        <article class="stage person">
+          <h2>1. People</h2>
+          <p>Visitors browse the site, sign in, book a show, or update CMS content.</p>
+          <span class="tag">Website visitor</span>
+          <span class="tag">Content editor</span>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="stage">
+          <h2>2. React app</h2>
+          <p><strong>Public pages:</strong> home, Showtime, About, Pulse &amp; Page.</p>
+          <p><strong>Other pages:</strong> login, account, seat selection, demo checkout.</p>
+          <p><strong>CMS:</strong> About, Pulse, and website-section editors.</p>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="stage api">
+          <h2>3. Express API</h2>
+          <p>Receives content requests, applies app rules, and sends back data.</p>
+          <span class="tag">/api/about</span>
+          <span class="tag">/api/pulse</span>
+          <span class="tag">/api/sections</span>
+          <span class="tag">/api/uploads</span>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="stage storage">
+          <h2>4. Data &amp; files</h2>
+          <p><strong>MongoDB:</strong> About, Pulse posts, and site-section content.</p>
+          <p><strong>Backend files:</strong> uploaded images and videos.</p>
+          <span class="tag">Database</span>
+          <span class="tag">Media files</span>
+        </article>
+      </div>
+
+      <p class="return">Saved content and file URLs come back through the API and are shown by the React pages.</p>
+
+      <div class="lower-grid">
+        <article class="info">
+          <h3>Sign-in uses a separate service</h3>
+          <p>Login and signup use Firebase Authentication. The app then shows the user’s account pages.</p>
+        </article>
+        <article class="info">
+          <h3>Accounts and demo bookings</h3>
+          <p>Profile, addresses, and bookings are kept in this browser’s localStorage—not in MongoDB. Checkout is a demo and does not charge a payment.</p>
+        </article>
+        <article class="info warn">
+          <h3>Newsletter &amp; CMS access</h3>
+          <p>Insider signup currently updates the page only. The CMS routes do not currently require a login gate.</p>
+        </article>
+      </div>
+
+      <div class="footer">
+        <span>INT ABCPA · Application workflow</span>
+        <span>1 / 2 · Overall application</span>
+      </div>
+    </section>
+
+    <section class="page" aria-labelledby="cms-title">
+      <p class="eyebrow">A closer look at content management</p>
+      <h1 id="cms-title">CMS, API &amp; database workflow</h1>
+      <p class="subtitle">The same content API is used to load and save CMS content, and to show it on public pages.</p>
+
+      <div class="steps" aria-label="CMS content workflow">
+        <article class="step">
+          <span class="num">1</span>
+          <h2>Open an editor</h2>
+          <p>Choose About, Pulse, or a page section such as Hero or Showtime.</p>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="step">
+          <span class="num">2</span>
+          <h2>Load content</h2>
+          <p>React asks the API for the current content using a GET request.</p>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="step">
+          <span class="num">3</span>
+          <h2>Edit &amp; upload</h2>
+          <p>Change text and links. Upload an image or video when needed.</p>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="step">
+          <span class="num">4</span>
+          <h2>Save content</h2>
+          <p>The API receives the changes and saves the content record.</p>
+        </article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="step">
+          <span class="num">5</span>
+          <h2>Show on the site</h2>
+          <p>Public pages request the saved content and render it for visitors.</p>
+        </article>
+      </div>
+
+      <div class="cms-details">
+        <article class="upload-flow">
+          <h2>When an editor adds media</h2>
+          <p class="line"><strong>Select image or video</strong><span class="mini-arrow">→</span>Send file to <code>/api/uploads/image</code> or <code>/api/uploads/video</code></p>
+          <p class="line"><strong>Backend checks the file</strong><span class="mini-arrow">→</span>Saves it in <code>backend/uploads</code></p>
+          <p class="line"><strong>API returns a media URL</strong><span class="mini-arrow">→</span>CMS saves that URL with the content</p>
+          <p class="line"><strong>Public page loads the URL</strong><span class="mini-arrow">→</span>Browser displays the image or video</p>
+        </article>
+        <article class="database-flow">
+          <h2>Where content is stored</h2>
+          <p class="line"><strong>MongoDB connected:</strong> content is saved in MongoDB collections.</p>
+          <p class="line"><strong>MongoDB unavailable:</strong> backend uses temporary in-memory content; restart clears it.</p>
+          <p class="line"><strong>API unavailable in browser:</strong> some editors fall back to this browser’s localStorage.</p>
+          <p class="line"><strong>Important:</strong> browser fallback data does not sync to MongoDB or other devices.</p>
+        </article>
+      </div>
+
+      <div class="note">
+        <strong>Local development:</strong> Vite forwards <code>/api</code> and <code>/uploads</code> requests to the Express server. Production hosting must route those same paths to the backend.
+      </div>
+
+      <div class="footer">
+        <span>INT ABCPA · Application workflow</span>
+        <span>2 / 2 · CMS content journey</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

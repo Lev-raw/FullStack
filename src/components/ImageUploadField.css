@@ -1,0 +1,31 @@
+.image-upload-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.image-upload-field input[type='text'] {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #d8c8c5;
+  border-radius: 4px;
+  background: #fff;
+  font: inherit;
+}
+
+.image-upload-field input[type='file'] {
+  max-width: 100%;
+}
+
+.image-upload-hint,
+.image-upload-error {
+  margin: 0;
+  font-size: 12px;
+}
+
+.image-upload-error {
+  color: #a12626;
+}

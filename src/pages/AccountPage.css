@@ -1,0 +1,478 @@
+.account-layout {
+  min-height: 100vh;
+  color: #454545;
+  background: #f3f5f7;
+}
+
+.account-page {
+  min-height: 70vh;
+  padding: 18px clamp(24px, 6.2vw, 96px) 66px;
+}
+
+.account-breadcrumb {
+  margin: 0 0 23px;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.account-breadcrumb span {
+  color: #8d111b;
+}
+
+.account-grid {
+  display: grid;
+  max-width: 1240px;
+  margin: auto;
+  grid-template-columns: 190px minmax(0, 1fr);
+  align-items: start;
+  gap: 34px;
+}
+
+.account-sidebar h1 {
+  margin: -10px 0 25px;
+  color: #8d111b;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.account-sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+
+.account-sidebar nav a,
+.account-sidebar nav button {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 13px;
+  padding: 0 12px;
+  border: 0;
+  color: #666;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.account-sidebar nav a.is-active,
+.account-sidebar nav a:hover,
+.account-sidebar nav button:hover {
+  color: #8d111b;
+  background: #f5ebec;
+}
+
+.account-sidebar nav a span,
+.account-sidebar nav button span {
+  width: 16px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.account-content {
+  min-width: 0;
+  min-height: 378px;
+  padding: 28px clamp(22px, 5.2vw, 72px) 38px;
+  background: #fff;
+}
+
+.account-content h2 {
+  margin: 0 0 21px;
+  color: #8d111b;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.account-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 24px;
+}
+
+.account-fields label,
+.account-address-form > label,
+.account-address-fields label {
+  display: grid;
+  gap: 6px;
+  color: #666;
+  font-size: 11px;
+}
+
+.account-fields input,
+.account-fields select,
+.account-address-form > label input,
+.account-address-fields input {
+  width: 100%;
+  height: 39px;
+  padding: 0 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 0;
+  color: #555;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+}
+
+.account-fields input:focus,
+.account-fields select:focus,
+.account-address-form input:focus {
+  border-color: #8d111b;
+  outline: 2px solid rgb(141 17 27 / 13%);
+}
+
+.account-fields input[readonly] {
+  background: #f7f7f7;
+}
+
+.account-primary-button {
+  min-width: 86px;
+  min-height: 40px;
+  margin-top: 16px;
+  padding: 0 20px;
+  border: 0;
+  color: #fff;
+  background: #8d111b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.account-primary-button:hover {
+  background: #701019;
+}
+
+.account-bookings {
+  display: grid;
+  gap: 14px;
+}
+
+.account-bookings h2 {
+  margin-bottom: 0;
+}
+
+.account-booking-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 31%) minmax(0, 1fr);
+  gap: 22px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.account-booking-card > img {
+  width: 100%;
+  aspect-ratio: 1.6;
+  object-fit: cover;
+}
+
+.account-booking-details {
+  min-width: 0;
+}
+
+.account-booking-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.account-booking-title h3 {
+  margin: 0 0 3px;
+  color: #555;
+  font-size: 17px;
+}
+
+.account-booking-title p,
+.account-booking-title > span,
+.account-booking-venue {
+  margin: 0;
+  color: #666;
+  font-size: 10px;
+}
+
+.account-booking-date {
+  margin: 11px 0 4px;
+  color: #8d111b;
+  font-size: 11px;
+}
+
+.account-booking-seats {
+  margin: 10px 0;
+  padding: 7px 0;
+  border-top: 1px solid #ddd;
+  color: #9b7844;
+  font-size: 10px;
+}
+
+.account-booking-cost {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+.account-booking-cost strong {
+  font-weight: 500;
+}
+
+.account-booking-total {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+.account-empty-state {
+  display: grid;
+  min-height: 180px;
+  align-content: center;
+  justify-items: center;
+  gap: 10px;
+  border: 1px solid #e5e5e5;
+  color: #666;
+  font-size: 13px;
+}
+
+.account-empty-state p {
+  margin: 0;
+}
+
+.account-empty-state a {
+  color: #8d111b;
+}
+
+.account-address-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.account-address-card {
+  min-width: 0;
+  padding: 17px;
+  background: #f3f5f7;
+}
+
+.account-address-card.is-default {
+  background: #f5ebec;
+}
+
+.account-address-card h3 {
+  margin: 0 0 12px;
+  color: #8d111b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.account-address-card h3 span {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.account-address-card p {
+  margin: 0 0 9px 22px;
+  color: #666;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.account-address-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 22px;
+}
+
+.account-address-actions button {
+  min-width: 58px;
+  min-height: 27px;
+  border: 1px solid #8d111b;
+  color: #8d111b;
+  background: transparent;
+  font-size: 9px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.account-address-actions button:first-child {
+  color: #fff;
+  background: #8d111b;
+}
+
+.account-add-address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 17px 0 14px;
+  padding: 0;
+  border: 0;
+  color: #8d111b;
+  background: transparent;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.account-add-address span {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #8d111b;
+  font-size: 16px;
+}
+
+.account-address-form {
+  display: grid;
+  gap: 10px;
+}
+
+.account-address-form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 3px;
+  padding: 0;
+  border: 0;
+  color: #555;
+  font-size: 11px;
+}
+
+.account-address-form legend {
+  float: left;
+  margin-right: 12px;
+}
+
+.account-address-form fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.account-address-form input[type="radio"],
+.account-address-form input[type="checkbox"] {
+  accent-color: #8d111b;
+}
+
+.account-address-form .account-default-toggle {
+  margin-left: auto;
+  color: #666;
+}
+
+.account-address-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.account-address-form .account-primary-button {
+  justify-self: start;
+}
+
+.account-notice {
+  margin: 16px 0 0;
+  color: #6c541e;
+  font-size: 12px;
+}
+
+.account-loading {
+  min-height: 65vh;
+  padding: 80px 6%;
+  color: #555;
+}
+
+.account-layout .site-footer {
+  border-top: 1px solid #ddd;
+  color: #555;
+  background: #fff;
+}
+
+.account-layout .footer-main {
+  grid-template-columns: 1.1fr 1.9fr 1.15fr 0.95fr;
+  gap: 24px;
+  padding: 32px 5.5%;
+}
+
+.account-layout .footer-brand img {
+  width: clamp(130px, 11vw, 205px);
+}
+
+.account-layout .footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+  gap: 10px 26px;
+}
+
+.account-layout .footer-bottom {
+  border-top: 1px solid #ddd;
+  color: #777;
+}
+
+@media (max-width: 800px) {
+  .account-page {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .account-grid {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .account-content {
+    padding: 24px;
+  }
+
+  .account-booking-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .account-booking-card > img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .account-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .account-sidebar h1 {
+    margin: 0 0 12px;
+    font-size: 27px;
+  }
+
+  .account-sidebar nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .account-content {
+    min-height: 300px;
+    padding: 22px 17px;
+  }
+
+  .account-fields,
+  .account-address-list,
+  .account-address-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .account-address-form .account-default-toggle {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .account-layout .footer-main {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}

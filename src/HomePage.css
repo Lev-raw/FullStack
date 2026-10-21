@@ -1,0 +1,892 @@
+.home-page {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  color: #545454;
+  background: #fff;
+  font-family: "Oxygen", Arial, sans-serif;
+}
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: border-box;
+}
+
+#root {
+  container-type: inline-size;
+}
+
+.home-page .main-nav {
+  height: 98px;
+  padding-inline: clamp(20px, 3vw, 48px);
+}
+
+.home-page .nav-left,
+.home-page .nav-right {
+  justify-content: space-between;
+  gap: clamp(8px, 1vw, 16px);
+}
+
+.home-page .main-nav li > a {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.home-page .logo-wrap {
+  padding-inline: clamp(30px, 2vw, 32px);
+}
+
+.home-page .logo-wrap img {
+  max-width: 140px;
+  height: 82px;
+  object-fit: contain;
+}
+
+.home-page .main-nav .btn-book {
+  width: 161px;
+  height: 50px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.home-page .hero {
+  width: 100cqw;
+  max-width: 100cqw;
+  height: 529px;
+  margin-left: calc((100% - 100cqw) / 2);
+}
+
+.home-page .hero-content h1 {
+  font-family: "Oxygen", Arial, sans-serif;
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.home-page .hero-content p {
+  font-family: "Oxygen", Arial, sans-serif;
+}
+
+.home-page .hero-content .btn-book {
+  width: 161px;
+  height: 50px;
+  background: #7d0b15;
+  font-family: "Oxygen", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-page .hero-content .btn-book:hover,
+.home-page .main-nav .btn-book:hover {
+  background: #650811;
+}
+
+.home-page .showtime,
+.home-page .insider {
+  width: 100cqw;
+  max-width: 100cqw;
+  margin-left: calc((100% - 100cqw) / 2);
+}
+
+.home-page .about-poster {
+  max-width: 1440px;
+  padding: 34px 80px 60px;
+}
+
+.home-page .rajashree-section {
+  grid-template-columns: minmax(0, 637px) minmax(0, 599px);
+  gap: 44px;
+}
+
+.home-page .rajashree-image {
+  height: 454px;
+}
+
+.home-page .rajashree-content {
+  padding-top: 0;
+}
+
+.home-page .rajashree-content p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.home-page .rajashree-name h2 {
+  font-size: 24px;
+}
+
+.home-page .saga-section {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  height: auto;
+  min-height: 387px;
+  margin-top: 28px;
+  padding-top: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.home-page .saga-decoration {
+  position: absolute;
+  z-index: -1;
+  height: auto;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.home-page .saga-decoration--emblem {
+  top: 0;
+  right: 2.5%;
+  width: 68px;
+}
+
+.home-page .saga-decoration--instrument {
+  right: 15%;
+  bottom: 4px;
+  width: 50px;
+}
+
+.home-page .saga-title {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.27;
+}
+
+.home-page .saga-text {
+  max-width: 1280px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.home-page .saga-text-second {
+  margin-top: -26px;
+}
+
+.home-page .saga-button,
+.home-page .legacy-button,
+.home-page .showtime-book,
+.home-page .view-all,
+.home-page .pulse-view-all,
+.home-page .insider-submit {
+  border: 1px solid #7d0b15;
+  background: #7d0b15;
+  color: #fff;
+  font-family: "Oxygen", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-page .saga-button {
+  width: 195px;
+  height: 50px;
+  margin: 0;
+}
+
+.home-page .showtime {
+  height: 915px;
+  padding: 56px 80px 60px;
+  background: #f5eded;
+}
+
+.home-page .showtime-heading,
+.home-page .pulse-heading h2,
+.home-page .culinary-title {
+  margin: 0 auto 44px;
+  color: #545454;
+  font-family: "Oxygen", Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.27;
+}
+
+.home-page .showtime-carousel {
+  max-width: 1280px;
+}
+
+.home-page .showtime-cards {
+  gap: 40px;
+}
+
+.home-page .showtime-card {
+  flex-basis: calc(50% - 20px);
+}
+
+.home-page .showtime-card h3 {
+  margin: 20px 0 4px;
+  color: #545454;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.home-page .showtime-card p {
+  color: #545454;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.home-page .showtime-buttons {
+  padding-top: 24px;
+}
+
+.home-page .showtime-book {
+  min-width: 148px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.home-page .more-info {
+  min-width: 148px;
+  height: 50px;
+  border-color: #7d0b15;
+  color: #7d0b15;
+  font-family: "Oxygen", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-page .view-all,
+.home-page .pulse-view-all {
+  min-width: 161px;
+  height: 50px;
+}
+
+.home-page .showtime-arrow,
+.home-page .pulse-arrow {
+  color: #7d0b15;
+}
+
+.home-page .performance-spaces {
+  padding: 181px 80px 0;
+}
+
+.home-page .performance-header {
+  align-items: center;
+  margin-bottom: 62px;
+}
+
+.home-page .performance-header h2 {
+  color: #545454;
+  font-size: 48px;
+  line-height: 1.27;
+}
+
+.home-page .performance-tabs {
+  gap: 40px;
+}
+
+.home-page .performance-tabs button {
+  color: #000;
+  font-size: 24px;
+}
+
+.home-page .performance-tabs button.active {
+  border-color: #7d0b15;
+  color: #7d0b15;
+}
+
+.home-page .space-content {
+  grid-template-columns: minmax(0, 384px) minmax(0, 1fr);
+  gap: 76px;
+  min-height: 500px;
+}
+
+.home-page .space-item h3 {
+  font-size: 24px;
+}
+
+.home-page .space-item h3.active {
+  color: #7d0b15;
+}
+
+.home-page .space-item p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.home-page .space-divider {
+  background: #7d0b15;
+}
+
+.home-page .space-image img {
+  height: 500px;
+}
+
+.home-page .legacy-library {
+  margin-top: 0;
+  padding: 0 80px;
+}
+
+.home-page .legacy-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 696px) minmax(0, 495px);
+  gap: 89px;
+  align-items: start;
+}
+
+.home-page .legacy-content > img {
+  aspect-ratio: 77 / 50;
+}
+
+.home-page .legacy-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.home-page .legacy-title {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.27;
+}
+
+.home-page .legacy-text {
+  margin: 0;
+  color: #7d0b15;
+  font-size: 24px;
+}
+
+.home-page .legacy-description {
+  margin: 0;
+  color: #545454;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.home-page .legacy-button {
+  display: inline-flex;
+  min-width: 148px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-decoration: none;
+}
+
+.home-page .culinary-experience {
+  margin-top: 71px;
+  padding: 0 80px 42px;
+}
+
+.home-page .culinary-title {
+  margin-bottom: 9px;
+}
+
+.home-page .culinary-cards {
+  max-width: 1280px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.home-page .culinary-card {
+  max-width: none;
+  aspect-ratio: 620 / 420;
+}
+
+.home-page .culinary-overlay h3 {
+  font-size: 24px;
+}
+
+.home-page .culinary-overlay p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.home-page .space-directory {
+  padding: 34px 80px 109px;
+}
+
+.home-page .directory-grid {
+  max-width: 1280px;
+}
+
+.home-page .directory-card {
+  min-height: 220px;
+  padding: 12px 14px;
+  gap: 15px;
+  background: #f5eded;
+}
+
+.home-page .directory-link {
+  border-color: #7d0b15;
+  color: #7d0b15;
+}
+
+.home-page .directory-card:hover .directory-link,
+.home-page .directory-card:focus-visible .directory-link {
+  background: #a4895d;
+  border-color: #a4895d;
+}
+
+.home-page .pulse-page {
+  padding: 42px 80px 58px;
+}
+
+.home-page .pulse-heading h2 {
+  margin-bottom: 30px;
+}
+
+.home-page .article-grid {
+  max-width: 1280px;
+  gap: 38px;
+}
+
+.home-page .article-card img {
+  aspect-ratio: 1.4;
+}
+
+.home-page .article-date {
+  color: #545454;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.home-page .article-card h3 {
+  color: #545454;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.home-page .article-card a {
+  color: #7d0b15;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.home-page .insider {
+  min-height: 472px;
+  background: #f5eded;
+}
+
+.home-page .insider-card h2 {
+  color: #545454;
+  font-family: "Oxygen", Arial, sans-serif;
+}
+
+.home-page .insider-lead {
+  color: #7d0b15;
+}
+
+.home-page .insider-submit {
+  min-width: 148px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.home-page .site-footer {
+  border-top-color: #d9d9d9;
+}
+
+.home-page .footer-main {
+  max-width: 1440px;
+  grid-template-columns: 340px 369px 290px minmax(0, 1fr);
+  gap: 36px;
+  padding: 30px 49px 10px;
+}
+
+.home-page .footer-brand img {
+  width: 205px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.home-page .footer-contact,
+.home-page .footer-links,
+.home-page .footer-social p {
+  color: #545454;
+  font-size: 14px;
+}
+
+.home-page .footer-links {
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(4, auto);
+  gap: 18px 32px;
+}
+
+.home-page .footer-links a {
+  color: #545454;
+}
+
+.home-page .footer-bottom {
+  padding: 6px 80px;
+  border-top-color: #d9d9d9;
+  font-size: 13px;
+}
+
+@media (min-width: 1251px) and (max-width: 1320px) {
+  .home-page .main-nav {
+    padding-inline: 20px;
+    grid-template-columns: minmax(0, 1fr) 179px minmax(0, 1fr);
+  }
+
+  .home-page .nav-left,
+  .home-page .nav-right {
+    gap: 8px;
+  }
+
+  .home-page .main-nav li > a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .home-page .logo-wrap {
+    padding-inline: 32px;
+  }
+
+  .home-page .logo-wrap img {
+    max-width: 115px;
+  }
+
+  .home-page .main-nav .btn-book {
+    width: 132px;
+    font-size: 11px;
+  }
+
+  .home-page .footer-main {
+    grid-template-columns:
+      minmax(130px, 0.8fr)
+      minmax(230px, 1.4fr)
+      minmax(170px, 1fr)
+      minmax(140px, 0.8fr);
+    gap: 20px;
+    padding-inline: 32px;
+  }
+
+  .home-page .footer-brand img {
+    width: 160px;
+  }
+
+  .home-page .footer-links {
+    grid-template-columns: repeat(2, max-content);
+    gap: 16px 20px;
+  }
+
+  .home-page .social-links {
+    gap: 12px;
+  }
+
+  .home-page .footer-bottom {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .home-page {
+    min-height: 100vh;
+  }
+
+  .home-page .insider {
+    min-height: 365px;
+  }
+
+  .home-page .main-nav {
+    padding-inline: 32px;
+  }
+
+  .home-page .logo-wrap {
+    position: absolute;
+    left: 50%;
+    padding-inline: 0;
+    transform: translateX(-50%);
+  }
+
+  .home-page .about-poster {
+    padding-inline: 48px;
+  }
+
+  .home-page .rajashree-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .home-page .saga-text {
+    font-size: 18px;
+  }
+
+  .home-page .showtime,
+  .home-page .performance-spaces,
+  .home-page .legacy-library,
+  .home-page .culinary-experience,
+  .home-page .space-directory,
+  .home-page .pulse-page {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .home-page .performance-spaces {
+    padding-top: 120px;
+  }
+
+  .home-page .legacy-content {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .home-page .footer-main {
+    grid-template-columns: minmax(140px, 0.8fr) minmax(260px, 1.4fr) minmax(220px, 1.1fr) minmax(120px, 0.8fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .about-poster {
+    padding: 32px 32px 48px;
+  }
+
+  .home-page .rajashree-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-page .rajashree-image {
+    height: auto;
+    min-height: 360px;
+  }
+
+  .home-page .saga-section {
+    min-height: 0;
+    padding-top: 48px;
+  }
+
+  .home-page .saga-text {
+    font-size: 16px;
+  }
+
+  .home-page .showtime {
+    height: auto;
+    min-height: 915px;
+  }
+
+  .home-page .performance-spaces {
+    padding-top: 80px;
+  }
+
+  .home-page .performance-header {
+    gap: 24px;
+  }
+
+  .home-page .performance-header h2 {
+    font-size: 40px;
+  }
+
+  .home-page .performance-tabs {
+    gap: 20px;
+  }
+
+  .home-page .performance-tabs button {
+    font-size: 20px;
+  }
+
+  .home-page .space-content {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 28px;
+  }
+
+  .home-page .legacy-library {
+    padding-top: 48px;
+  }
+
+  .home-page .legacy-content {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .home-page .legacy-title,
+  .home-page .performance-header h2 {
+    font-size: 38px;
+  }
+
+  .home-page .culinary-experience {
+    margin-top: 48px;
+  }
+
+  .home-page .space-directory {
+    padding-bottom: 72px;
+  }
+
+  .home-page .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home-page .main-nav {
+    height: 82px;
+    padding-inline: 16px;
+  }
+
+  .home-page .hero {
+    width: 100cqw;
+    max-width: 100cqw;
+    margin-left: calc((100% - 100cqw) / 2);
+    height: 420px;
+  }
+
+  .home-page .saga-decoration--emblem {
+    right: 0;
+    width: 42px;
+  }
+
+  .home-page .saga-decoration--instrument {
+    right: 2px;
+    bottom: 0;
+    width: 34px;
+  }
+
+  .home-page .about-poster {
+    padding: 28px 20px 40px;
+  }
+
+  .home-page .rajashree-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .home-page .rajashree-image {
+    min-height: 0;
+    aspect-ratio: 637 / 454;
+  }
+
+  .home-page .saga-title,
+  .home-page .showtime-heading,
+  .home-page .pulse-heading h2,
+  .home-page .culinary-title {
+    font-size: 32px;
+  }
+
+  .home-page .saga-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .home-page .saga-text-second {
+    margin-top: 0;
+  }
+
+  .home-page .showtime,
+  .home-page .performance-spaces,
+  .home-page .legacy-library,
+  .home-page .culinary-experience,
+  .home-page .space-directory,
+  .home-page .pulse-page {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .home-page .showtime {
+    height: auto;
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .home-page .showtime-heading {
+    margin-bottom: 28px;
+  }
+
+  .home-page .showtime-card {
+    flex-basis: 100%;
+  }
+
+  .home-page .performance-spaces {
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+
+  .home-page .performance-header {
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  .home-page .performance-header h2,
+  .home-page .legacy-title {
+    font-size: 32px;
+  }
+
+  .home-page .performance-tabs {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .home-page .performance-tabs button {
+    flex: 0 0 auto;
+    font-size: 18px;
+  }
+
+  .home-page .space-content,
+  .home-page .legacy-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .home-page .space-image img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .home-page .legacy-library {
+    padding-top: 24px;
+  }
+
+  .home-page .legacy-copy {
+    gap: 12px;
+  }
+
+  .home-page .legacy-text {
+    font-size: 20px;
+  }
+
+  .home-page .culinary-experience {
+    margin-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .home-page .culinary-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-page .space-directory {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  .home-page .directory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .directory-card {
+    min-height: 180px;
+    padding: 24px 12px;
+  }
+
+  .home-page .pulse-page {
+    padding-top: 36px;
+    padding-bottom: 44px;
+  }
+
+  .home-page .article-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .home-page .footer-main {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+  }
+
+  .home-page .footer-bottom {
+    flex-direction: column;
+    padding-inline: 24px;
+  }
+}

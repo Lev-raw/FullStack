@@ -1,0 +1,130 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2954 >>
+stream
+BT
+/F2 17 Tf 1 0 0 1 55 733 Tm (Multer image upload implementation) Tj
+/F1 10 Tf 1 0 0 1 55 709 Tm () Tj
+/F2 12 Tf 1 0 0 1 55 685 Tm (Overview) Tj
+/F1 10 Tf 1 0 0 1 55 661 Tm () Tj
+/F1 10 Tf 1 0 0 1 55 646 Tm (The CMS now sends selected image files to the Express backend as) Tj
+/F1 10 Tf 1 0 0 1 55 631 Tm (multipart/form-data. Multer validates and stores the images in) Tj
+/F1 10 Tf 1 0 0 1 55 616 Tm (backend/uploads/. The API returns a stable URL such as) Tj
+/F1 10 Tf 1 0 0 1 55 601 Tm (/uploads/<generated-name>.png; the About, Pulse & Page, and site-section) Tj
+/F1 10 Tf 1 0 0 1 55 586 Tm (content APIs save that URL alongside the rest of the CMS content.) Tj
+/F1 10 Tf 1 0 0 1 55 571 Tm () Tj
+/F1 10 Tf 1 0 0 1 55 556 Tm (Existing image URL and site-path entry is still supported.) Tj
+/F1 10 Tf 1 0 0 1 55 541 Tm () Tj
+/F2 12 Tf 1 0 0 1 55 517 Tm (Request flow) Tj
+/F1 10 Tf 1 0 0 1 55 493 Tm () Tj
+/F1 10 Tf 1 0 0 1 55 478 Tm (1. An administrator selects a JPG, JPEG, PNG, or WEBP file in an image field.) Tj
+/F1 10 Tf 1 0 0 1 55 463 Tm (2. The shared frontend helper posts the file under the image form field to) Tj
+/F1 10 Tf 1 0 0 1 55 448 Tm (POST /api/uploads/image.) Tj
+/F1 10 Tf 1 0 0 1 55 433 Tm (3. Multer checks the image MIME type, extension, and 5 MB file-size limit,) Tj
+/F1 10 Tf 1 0 0 1 55 418 Tm (then saves the file using a generated UUID filename.) Tj
+/F1 10 Tf 1 0 0 1 55 403 Tm (4. The upload route checks the file signature and removes the file if its) Tj
+/F1 10 Tf 1 0 0 1 55 388 Tm (bytes do not match the declared image type.) Tj
+/F1 10 Tf 1 0 0 1 55 373 Tm (5. The API returns { "url": "/uploads/<filename>" }. The CMS stores that) Tj
+/F1 10 Tf 1 0 0 1 55 358 Tm (path in the related About, Pulse, or site-section content.) Tj
+/F1 10 Tf 1 0 0 1 55 343 Tm (6. Express serves the saved image at /uploads/<filename>. Vite proxies that) Tj
+/F1 10 Tf 1 0 0 1 55 328 Tm (path to the backend while developing.) Tj
+/F1 10 Tf 1 0 0 1 55 313 Tm () Tj
+/F2 12 Tf 1 0 0 1 55 289 Tm (API details) Tj
+/F1 10 Tf 1 0 0 1 55 265 Tm () Tj
+/F1 10 Tf 1 0 0 1 55 250 Tm (- Upload: POST /api/uploads/image) Tj
+/F1 10 Tf 1 0 0 1 55 235 Tm (- Request content type: multipart/form-data) Tj
+/F1 10 Tf 1 0 0 1 55 220 Tm (- Form field: image \(one file\)) Tj
+/F1 10 Tf 1 0 0 1 55 205 Tm (- Accepted formats: JPG/JPEG, PNG, WEBP) Tj
+/F1 10 Tf 1 0 0 1 55 190 Tm (- Maximum file size: 5 MB) Tj
+/F1 10 Tf 1 0 0 1 55 175 Tm (- Success response \(201\): { "url": "/uploads/<generated-name>.<ext>" }) Tj
+/F1 10 Tf 1 0 0 1 55 160 Tm (- Invalid/missing image: JSON error response with HTTP 400) Tj
+/F1 10 Tf 1 0 0 1 55 145 Tm (- Oversized image: JSON error response with HTTP 413) Tj
+/F1 10 Tf 1 0 0 1 55 130 Tm (- Image delivery: GET /uploads/<generated-name>.<ext>) Tj
+/F1 10 Tf 1 0 0 1 55 115 Tm () Tj
+/F2 12 Tf 1 0 0 1 55 91 Tm (Files changed) Tj
+/F1 10 Tf 1 0 0 1 55 67 Tm () Tj
+ET
+BT
+/F1 9 Tf
+1 0 0 1 55 32 Tm (Multer image upload implementation) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2902 >>
+stream
+BT
+/F1 10 Tf 1 0 0 1 55 742 Tm (- backend/Middleware/upload.js: creates the upload directory; configures) Tj
+/F1 10 Tf 1 0 0 1 55 727 Tm (Multer disk storage, safe generated filenames, allowed formats, and limits.) Tj
+/F1 10 Tf 1 0 0 1 55 712 Tm (- backend/routes/uploadRoutes.js: adds the upload endpoint and verifies) Tj
+/F1 10 Tf 1 0 0 1 55 697 Tm (image signatures before exposing a saved file.) Tj
+/F1 10 Tf 1 0 0 1 55 682 Tm (- backend/server.js: mounts the upload API and serves persisted uploads;) Tj
+/F1 10 Tf 1 0 0 1 55 667 Tm (returns clear Multer and request error responses.) Tj
+/F1 10 Tf 1 0 0 1 55 652 Tm (- backend/package.json and backend/package-lock.json: add Multer as a) Tj
+/F1 10 Tf 1 0 0 1 55 637 Tm (backend runtime dependency.) Tj
+/F1 10 Tf 1 0 0 1 55 622 Tm (- .gitignore: excludes persisted uploads from source control.) Tj
+/F1 10 Tf 1 0 0 1 55 607 Tm (- vite.config.js: proxies /uploads to the backend during local development.) Tj
+/F1 10 Tf 1 0 0 1 55 592 Tm (- src/api/uploadApi.js: sends files with FormData and validates API replies.) Tj
+/F1 10 Tf 1 0 0 1 55 577 Tm (- src/components/ImageUploadField.jsx and) Tj
+/F1 10 Tf 1 0 0 1 55 562 Tm (src/components/ImageUploadField.css: shared URL/file inputs, progress,) Tj
+/F1 10 Tf 1 0 0 1 55 547 Tm (size/type checks, and visible errors.) Tj
+/F1 10 Tf 1 0 0 1 55 532 Tm (- src/components/AboutAdmin.jsx: uses the shared upload field for the) Tj
+/F1 10 Tf 1 0 0 1 55 517 Tm (leadership portrait.) Tj
+/F1 10 Tf 1 0 0 1 55 502 Tm (- src/components/PulsePostForm.jsx: uploads Pulse images instead of) Tj
+/F1 10 Tf 1 0 0 1 55 487 Tm (embedding selected files as base64 data URLs.) Tj
+/F1 10 Tf 1 0 0 1 55 472 Tm (- src/components/SiteSectionsAdmin.jsx: connects Showtime, Performance) Tj
+/F1 10 Tf 1 0 0 1 55 457 Tm (Spaces, Legacy Library, and Culinary Experience image fields to the upload) Tj
+/F1 10 Tf 1 0 0 1 55 442 Tm (API and prevents saving while uploads are in progress.) Tj
+/F1 10 Tf 1 0 0 1 55 427 Tm () Tj
+/F2 12 Tf 1 0 0 1 55 403 Tm (Running and verifying) Tj
+/F1 10 Tf 1 0 0 1 55 379 Tm () Tj
+/F1 10 Tf 1 0 0 1 55 364 Tm (Start the backend from backend/ with npm run dev, and start the frontend) Tj
+/F1 10 Tf 1 0 0 1 55 349 Tm (from the project root with npm run dev. In the CMS, choose an image and wait) Tj
+/F1 10 Tf 1 0 0 1 55 334 Tm (for the upload confirmation before saving the section or post. The saved image) Tj
+/F1 10 Tf 1 0 0 1 55 319 Tm (URL should begin with /uploads/ and load directly in the browser.) Tj
+/F1 10 Tf 1 0 0 1 55 304 Tm () Tj
+/F1 10 Tf 1 0 0 1 55 289 Tm (The backend upload folder is created automatically when the server starts.) Tj
+/F1 10 Tf 1 0 0 1 55 274 Tm (Back up backend/uploads/ with the application data because database records) Tj
+/F1 10 Tf 1 0 0 1 55 259 Tm (refer to the generated files by URL.) Tj
+ET
+BT
+/F1 9 Tf
+1 0 0 1 55 32 Tm (Multer image upload implementation) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000272 00000 n 
+0000000408 00000 n 
+0000003414 00000 n 
+0000003550 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+6504
+%%EOF
